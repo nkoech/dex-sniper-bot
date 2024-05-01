@@ -1,0 +1,56 @@
+{
+    "base_url": "wss://io.dexscreener.com/dex/screener/pairs",
+    "tokens_api_url": "https://api.dexscreener.com/latest/dex/tokens",
+    "solana": {
+        "new_pairs": {
+            "since": "h6",
+            "filter": "filters[pairAge][max]=6",
+            "rank_by": "rankBy[key]=pairAge&rankBy[order]=desc"
+        },
+        "gaining_pairs": {
+            "since": "h6",
+            "filter": "filters[liquidity][min]=25000&filters[txns][h24][min]=50&filters[volume][h24][min]=10000",
+            "rank_by": "rankBy[key]=priceChangeH6&rankBy[order]=desc"
+        },
+        "trending_pairs": {
+            "since": "h6",
+            "filter": "",
+            "rank_by": "rankBy[key]=trendingScoreH6&rankBy[order]=desc"
+        }
+    },
+    "reports_dir": "./reports",
+    "fields_to_extract": {
+        "chain": "chainId",
+        "dex": "dexId",
+        "pair_address": "pairAddress",
+        "base_token_symbol": "baseToken.symbol",
+        "base_token_name": "baseToken.name",
+        "base_token_address": "baseToken.address",
+        "base_token_api": "",
+        "quote_token_symbol": "quoteToken.symbol",
+        "quote_token_name": "quoteToken.name",
+        "quote_token_address": "quoteToken.address",
+        "pair_create_timestamp": "pairCreatedAt",
+        "market_cap": "marketCap",
+        "buyers_5m": "buyers.m5",
+        "buyers_1h": "buyers.h1",
+        "buyers_6h": "buyers.h6",
+        "buyers_24h": "buyers.h24",
+        "volume_buy_5m": "volumeBuy.m5",
+        "volume_buy_1h": "volumeBuy.h1",
+        "volume_buy_6h": "volumeBuy.h6",
+        "volume_buy_24h": "volumeBuy.h24",
+        "sellers_5m": "sellers.m5",
+        "sellers_1h": "sellers.h1",
+        "sellers_6h": "sellers.h6",
+        "sellers_24h": "sellers.h24",
+        "volume_sell_5m": "volumeSell.m5",
+        "volume_sell_1h": "volumeSell.h1",
+        "volume_sell_6h": "volumeSell.h6",
+        "volume_sell_24h": "volumeSell.h24",
+        "makers_5m": "makers.m5",
+        "makers_1h": "makers.h1",
+        "makers_6h": "makers.h6",
+        "makers_24h": "makers.h24"
+    }
+}

@@ -1,0 +1,242 @@
+{
+    "schemaVersion": "1.0.0",
+    "pairs": [
+        {
+            "chainId": "solana",
+            "dexId": "raydium",
+            "url": "https://dexscreener.com/solana/83g6vzjzlrcnhbslatj94vcprimyyqwun6zfl11mcadl",
+            "pairAddress": "83G6VzJzLRCnHBsLATj94VCpRimyyqwuN6ZfL11McADL",
+            "baseToken": {
+                "address": "GtDZKAqvMZMnti46ZewMiXCa4oXF4bZxwQPoKzXPFxZn",
+                "name": "nubcat",
+                "symbol": "nub"
+            },
+            "quoteToken": {
+                "address": "So11111111111111111111111111111111111111112",
+                "name": "Wrapped SOL",
+                "symbol": "SOL"
+            },
+            "priceNative": "0.00005676",
+            "priceUsd": "0.01060",
+            "txns": {
+                "m5": {
+                    "buys": 86,
+                    "sells": 57
+                },
+                "h1": {
+                    "buys": 1592,
+                    "sells": 1130
+                },
+                "h6": {
+                    "buys": 21094,
+                    "sells": 15669
+                },
+                "h24": {
+                    "buys": 22725,
+                    "sells": 16964
+                }
+            },
+            "volume": {
+                "h24": 23130923.05,
+                "h6": 21891580.22,
+                "h1": 1409979.61,
+                "m5": 59965.15
+            },
+            "priceChange": {
+                "m5": 8.09,
+                "h1": 0.83,
+                "h6": 952,
+                "h24": 61070
+            },
+            "liquidity": {
+                "usd": 441704.82,
+                "base": 20816414,
+                "quote": 1183.6798
+            },
+            "fdv": 10600054,
+            "pairCreatedAt": 1711333309000,
+            "info": {
+                "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/solana/GtDZKAqvMZMnti46ZewMiXCa4oXF4bZxwQPoKzXPFxZn.png",
+                "websites": [
+                    {
+                        "label": "Website",
+                        "url": "https://nubcat.xyz/"
+                    },
+                    {
+                        "label": "Instagram",
+                        "url": "https://www.instagram.com/sillynubcat/"
+                    }
+                ],
+                "socials": [
+                    {
+                        "type": "twitter",
+                        "url": "https://twitter.com/sillynubcat"
+                    },
+                    {
+                        "type": "telegram",
+                        "url": "https://t.me/+kscqVLQZD51mNGZh"
+                    }
+                ]
+            }
+        },
+        {
+            "chainId": "solana",
+            "dexId": "orca",
+            "url": "https://dexscreener.com/solana/ahtyyjpurljodcrvhkmtyugrw1jdq7xjfssb24tqair4",
+            "pairAddress": "AHtyYjpUrLjodCrVHKMTYugrW1jDQ7XjFssb24tqair4",
+            "labels": [
+                "wp"
+            ],
+            "baseToken": {
+                "address": "GtDZKAqvMZMnti46ZewMiXCa4oXF4bZxwQPoKzXPFxZn",
+                "name": "nubcat",
+                "symbol": "nub"
+            },
+            "quoteToken": {
+                "address": "So11111111111111111111111111111111111111112",
+                "name": "Wrapped SOL",
+                "symbol": "SOL"
+            },
+            "priceNative": "0.00005686",
+            "priceUsd": "0.01061",
+            "txns": {
+                "m5": {
+                    "buys": 7,
+                    "sells": 2
+                },
+                "h1": {
+                    "buys": 119,
+                    "sells": 102
+                },
+                "h6": {
+                    "buys": 347,
+                    "sells": 280
+                },
+                "h24": {
+                    "buys": 347,
+                    "sells": 280
+                }
+            },
+            "volume": {
+                "h24": 33622.24,
+                "h6": 33622.24,
+                "h1": 14866.21,
+                "m5": 192.06
+            },
+            "priceChange": {
+                "m5": 7.93,
+                "h1": -0.65,
+                "h6": 110,
+                "h24": 110
+            },
+            "liquidity": {
+                "usd": 1606.94,
+                "base": 75679,
+                "quote": 4.3014
+            },
+            "fdv": 10619647,
+            "pairCreatedAt": 1711338935000,
+            "info": {
+                "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/solana/GtDZKAqvMZMnti46ZewMiXCa4oXF4bZxwQPoKzXPFxZn.png",
+                "websites": [
+                    {
+                        "label": "Website",
+                        "url": "https://nubcat.xyz/"
+                    },
+                    {
+                        "label": "Instagram",
+                        "url": "https://www.instagram.com/sillynubcat/"
+                    }
+                ],
+                "socials": [
+                    {
+                        "type": "twitter",
+                        "url": "https://twitter.com/sillynubcat"
+                    },
+                    {
+                        "type": "telegram",
+                        "url": "https://t.me/+kscqVLQZD51mNGZh"
+                    }
+                ]
+            }
+        },
+        {
+            "chainId": "solana",
+            "dexId": "fluxbeam",
+            "url": "https://dexscreener.com/solana/ccttezwpxpgo7a8u3dfoxghi3coje4ozmeqosaswj9nz",
+            "pairAddress": "CCttEzWpxPgo7a8U3dFoXGHi3CojE4oZMEqosasWj9nz",
+            "baseToken": {
+                "address": "GtDZKAqvMZMnti46ZewMiXCa4oXF4bZxwQPoKzXPFxZn",
+                "name": "nubcat",
+                "symbol": "nub"
+            },
+            "quoteToken": {
+                "address": "So11111111111111111111111111111111111111112",
+                "name": "Wrapped SOL",
+                "symbol": "SOL"
+            },
+            "priceNative": "0.00004909",
+            "priceUsd": "0.009044",
+            "txns": {
+                "m5": {
+                    "buys": 0,
+                    "sells": 0
+                },
+                "h1": {
+                    "buys": 0,
+                    "sells": 0
+                },
+                "h6": {
+                    "buys": 1,
+                    "sells": 1
+                },
+                "h24": {
+                    "buys": 1,
+                    "sells": 1
+                }
+            },
+            "volume": {
+                "h24": 0.02,
+                "h6": 0.02,
+                "h1": 0,
+                "m5": 0
+            },
+            "priceChange": {
+                "m5": 0,
+                "h1": 0,
+                "h6": 10.02,
+                "h24": 10.02
+            },
+            "liquidity": {
+                "usd": 0.37,
+                "base": 19.9632,
+                "quote": 0.001055
+            },
+            "fdv": 9044366,
+            "pairCreatedAt": 1711339861000,
+            "info": {
+                "imageUrl": "https://dd.dexscreener.com/ds-data/tokens/solana/GtDZKAqvMZMnti46ZewMiXCa4oXF4bZxwQPoKzXPFxZn.png",
+                "websites": [
+                    {
+                        "label": "Website",
+                        "url": "https://nubcat.xyz/"
+                    },
+                    {
+                        "label": "Instagram",
+                        "url": "https://www.instagram.com/sillynubcat/"
+                    }
+                ],
+                "socials": [
+                    {
+                        "type": "twitter",
+                        "url": "https://twitter.com/sillynubcat"
+                    },
+                    {
+                        "type": "telegram",
+                        "url": "https://t.me/+kscqVLQZD51mNGZh"
+                    }
+                ]
+            }
+        }
+    ]
+}

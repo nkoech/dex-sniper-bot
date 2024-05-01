@@ -1,0 +1,60 @@
+{
+    "schemaVersion": "1.0.0",
+    "pairs": [
+        {
+            "chainId": "solana",
+            "dexId": "raydium",
+            "url": "https://dexscreener.com/solana/6sx1r8bxh8kuxlhnogymh9ae23c5j7yd9cb1f1fs4tvz",
+            "pairAddress": "6sX1R8bxH8kUXLhnoGymh9Ae23c5j7yd9cB1f1fS4TvZ",
+            "baseToken": {
+                "address": "GDjKBYnyB3apQ2W79SGV2JyK4Do4g2D369qMhDdQNob8",
+                "name": "Vitalik's Cat",
+                "symbol": "$HEMULEWIF"
+            },
+            "quoteToken": {
+                "address": "So11111111111111111111111111111111111111112",
+                "name": "Wrapped SOL",
+                "symbol": "SOL"
+            },
+            "priceNative": "0.000000003283",
+            "priceUsd": "0.0000006124",
+            "txns": {
+                "m5": {
+                    "buys": 0,
+                    "sells": 0
+                },
+                "h1": {
+                    "buys": 0,
+                    "sells": 1
+                },
+                "h6": {
+                    "buys": 19,
+                    "sells": 837
+                },
+                "h24": {
+                    "buys": 87,
+                    "sells": 908
+                }
+            },
+            "volume": {
+                "h24": 2575.84,
+                "h6": 564.54,
+                "h1": 0,
+                "m5": 0
+            },
+            "priceChange": {
+                "m5": 0,
+                "h1": -16.92,
+                "h6": -98.51,
+                "h24": -97.73
+            },
+            "liquidity": {
+                "usd": 0.38,
+                "base": 28725,
+                "quote": 0.001953
+            },
+            "fdv": 29,
+            "pairCreatedAt": 1711336364000
+        }
+    ]
+}

@@ -1,0 +1,27 @@
+{
+    "base_api_url": "https://api.dexscreener.io/latest/dex/tokens",
+    "fields_to_extract": {
+        "price_usd": "priceUsd",
+        "price_native": "priceNative",
+        "fdv": "fdv",
+        "liquidity_base": "liquidity.base",
+        "liquidity_quote": "liquidity.quote",
+        "liquidity_usd": "liquidity.usd",
+        "volume_5m": "volume.m5",
+        "volume_1h": "volume.h1",
+        "volume_6h": "volume.h6",
+        "volume_24h": "volume.h24",
+        "price_change_5m": "priceChange.m5",
+        "price_change_1h": "priceChange.h1",
+        "price_change_6h": "priceChange.h6",
+        "price_change_24h": "priceChange.h24",
+        "txns_m5_buys": "txns.m5.buys",
+        "txns_m5_sells": "txns.m5.sells",
+        "txns_h1_buys": "txns.h1.buys",
+        "txns_h1_sells": "txns.h1.sells",
+        "txns_h6_buys": "txns.h6.buys",
+        "txns_h6_sells": "txns.h6.sells",
+        "txns_h24_buys": "txns.h24.buys",
+        "txns_h24_sells": "txns.h24.sells"
+    }
+}

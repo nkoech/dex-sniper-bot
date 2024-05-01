@@ -1,0 +1,75 @@
+{
+    "base_url": "wss://io.dexscreener.com/dex/screener/pairs",
+    "solana": {
+        "new_pairs": {
+            "since": "h6",
+            "filter": "filters[pairAge][max]=6",
+            "rank_by": "rankBy[key]=pairAge&rankBy[order]=desc"
+        },
+        "gaining_pairs": {
+            "since": "h6",
+            "filter": "filters[liquidity][min]=25000&filters[txns][h24][min]=50&filters[volume][h24][min]=10000",
+            "rank_by": "rankBy[key]=priceChangeH6&rankBy[order]=desc"
+        },
+        "trending_pairs": {
+            "since": "h6",
+            "filter": "",
+            "rank_by": "rankBy[key]=trendingScoreH6&rankBy[order]=desc"
+        }
+    },
+    "reports_dir": "./reports",
+    "fields_to_extract": {
+        "chain": "chainId",
+        "dex": "dexId",
+        "pair_address": "pairAddress",
+        "base_token_symbol": "baseToken.symbol",
+        "base_token_name": "baseToken.name",
+        "base_token_address": "baseToken.address",
+        "quote_token_symbol": "quoteToken.symbol",
+        "quote_token_name": "quoteToken.name",
+        "quote_token_address": "quoteToken.address",
+        "pair_create_timestamp": "pairCreatedAt",
+        // "price_usd": "priceUsd",
+        // "price_native": "price",
+        "market_cap": "marketCap",
+        // "liquidity_base": "liquidity.base",
+        // "liquidity_quote": "liquidity.quote",
+        // "liquidity_usd": "liquidity.usd",
+        // "volume_5m": "volume.m5",
+        // "volume_1h": "volume.h1",
+        // "volume_6h": "volume.h6",
+        // "volume_24h": "volume.h24",
+        // "price_change_5m": "priceChange.m5",
+        // "price_change_1h": "priceChange.h1",
+        // "price_change_6h": "priceChange.h6",
+        // "price_change_24h": "priceChange.h24"
+        "buyers_5m": "buyers.m5",
+        "buyers_1h": "buyers.h1",
+        "buyers_6h": "buyers.h6",
+        "buyers_24h": "buyers.h24",
+        "volume_buy_5m": "volumeBuy.m5",
+        "volume_buy_1h": "volumeBuy.h1",
+        "volume_buy_6h": "volumeBuy.h6",
+        "volume_buy_24h": "volumeBuy.h24",
+        "sellers_5m": "sellers.m5",
+        "sellers_1h": "sellers.h1",
+        "sellers_6h": "sellers.h6",
+        "sellers_24h": "sellers.h24",
+        "volume_sell_5m": "volumeSell.m5",
+        "volume_sell_1h": "volumeSell.h1",
+        "volume_sell_6h": "volumeSell.h6",
+        "volume_sell_24h": "volumeSell.h24",
+        // "txns_m5_buys": "txns.m5.buys",
+        // "txns_m5_sells": "txns.m5.sells",
+        // "txns_h1_buys": "txns.h1.buys",
+        // "txns_h1_sells": "txns.h1.sells",
+        // "txns_h6_buys": "txns.h6.buys",
+        // "txns_h6_sells": "txns.h6.sells",
+        // "txns_h24_buys": "txns.h24.buys",
+        // "txns_h24_sells": "txns.h24.sells"
+        "makers_5m": "makers.m5",
+        "makers_1h": "makers.h1",
+        "makers_6h": "makers.h6",
+        "makers_24h": "makers.h24"
+    }
+}
