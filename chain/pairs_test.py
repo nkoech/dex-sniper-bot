@@ -13,12 +13,12 @@ mock_pair = [
     {
         "chainId": "solana",
         "baseToken": {"address": mock_token_address},
-        "profile": {"website": "https://example.com"}
+        "profile": {"website": "https://example.com"},
     },
     {
         "chainId": "solana",
         "baseToken": {"address": mock_token_address},
-        "profile": {"website": "https://example.com", "twitter": "example"}
+        "profile": {"website": "https://example.com", "twitter": "example"},
     },
 ]
 
@@ -27,7 +27,7 @@ def get_exepected_pair_record():
     mock_pair_record = {
         "chain": "solana",
         "base_token_address": mock_token_address,
-        "base_token_api": f"https://api.dexscreener.com/latest/dex/tokens/{mock_token_address}"
+        "base_token_api": f"https://api.dexscreener.com/latest/dex/tokens/{mock_token_address}",
     }
     expected = {k: mock_pair_record.get(k, None) for k, _ in fields_to_extract.items()}
     return PairRecord(**expected)
@@ -38,7 +38,7 @@ def get_exepected_pair_record():
     [
         ("ethereum", mock_pair, pd.DataFrame([])),
         ("solana", mock_pair, pd.DataFrame([get_exepected_pair_record()])),
-    ]
+    ],
 )
 def test_create_data_frame(chain, chain_pairs, expected):
     pd.testing.assert_frame_equal(pairs.create_data_frame(chain, chain_pairs), expected)
@@ -49,7 +49,7 @@ def test_create_data_frame(chain, chain_pairs, expected):
     [
         ("ethereum", pd.DataFrame([])),
         ("solana", pd.DataFrame([get_exepected_pair_record()])),
-    ]
+    ],
 )
 def test_get_pairs(mocker, chain, expected):
     mocker.patch("chain.pairs.downloader.retrieve_pairs", return_value=mock_pair)
@@ -59,9 +59,20 @@ def test_get_pairs(mocker, chain, expected):
 @pytest.mark.parametrize(
     "chain, pair_type, expected",
     [
-        ("solana", "all", [("all", pd.DataFrame([get_exepected_pair_record()]))]),
-    ]
+        (
+            "solana",
+            ["new_pairs", "trending_pairs"],
+            [
+                ("new_pairs", pd.DataFrame([get_exepected_pair_record()])),
+                ("trending_pairs", pd.DataFrame([get_exepected_pair_record()])),
+            ],
+        ),
+    ],
 )
 def test_get_chain_pairs(mocker, chain, pair_type, expected):
     mocker.patch("chain.pairs.downloader.retrieve_pairs", return_value=mock_pair)
-    print(f"xxxxxxxxxxxxxxxx: {list(pairs.get_chain_pairs(chain, pair_type))}")
+    for i, (result_pair_type, result_pairs_df) in enumerate(
+        pairs.get_chain_pairs(chain, pair_type)
+    ):
+        assert result_pair_type == expected[i][0]
+        pd.testing.assert_frame_equal(result_pairs_df, expected[i][1])
