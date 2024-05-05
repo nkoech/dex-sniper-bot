@@ -6,14 +6,10 @@ import colorlog
 formatter = colorlog.ColoredFormatter(
     fmt="%(black)s%(asctime)s  %(log_color)s%(levelname)s%(reset)s  %(message_log_color)s%(message)s",
     datefmt="%b %d %Y, %H:%M %Z",
-    style='%',
+    style="%",
     secondary_log_colors={
-        'message': {
-            'WARNING':  'yellow',
-            'ERROR':    'red',
-            'CRITICAL': 'bold_red'
-        }
-    }
+        "message": {"WARNING": "yellow", "ERROR": "red", "CRITICAL": "bold_red"}
+    },
 )
 
 

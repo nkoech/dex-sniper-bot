@@ -20,5 +20,7 @@ def retrieve_pairs(uri: str, max_tries: int) -> typing.List[str]:
         pairs = request_pairs(uri).get("pairs")
         if pairs:
             return pairs
-        configs.logger.info(f"Attempt {tries + 1} of {max_tries} failed to retrieve pairs.")
+        configs.logger.info(
+            f"Attempt {tries + 1} of {max_tries} failed to retrieve pairs."
+        )
     return []
