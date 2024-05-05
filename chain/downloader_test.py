@@ -15,7 +15,10 @@ class FakeWebSocket:
 @pytest.mark.parametrize(
     "ws_data, expected",
     [
-        ('{"pairs": [{"pair": "BTC/USD", "price": 10000}]}', {"pairs": [{"pair": "BTC/USD", "price": 10000}]}),
+        (
+            '{"pairs": [{"pair": "BTC/USD", "price": 10000}]}',
+            {"pairs": [{"pair": "BTC/USD", "price": 10000}]},
+        ),
         ('{"pairs": not a valid json}', {}),
     ],
 )

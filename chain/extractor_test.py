@@ -16,12 +16,12 @@ mock_pair = [
     {
         "chainId": "solana",
         "baseToken": {"address": mock_token_address},
-        "profile": {"website": "https://example.com"}
+        "profile": {"website": "https://example.com"},
     },
     {
         "chainId": "solana",
         "baseToken": {"address": mock_token_address},
-        "profile": {"website": "https://example.com", "twitter": "example"}
+        "profile": {"website": "https://example.com", "twitter": "example"},
     },
 ]
 
@@ -52,7 +52,7 @@ def get_exepected_pair_record():
     mock_pair_record = {
         "chain": "solana",
         "base_token_address": mock_token_address,
-        "base_token_api": f"https://api.dexscreener.com/latest/dex/tokens/{mock_token_address}"
+        "base_token_api": f"https://api.dexscreener.com/latest/dex/tokens/{mock_token_address}",
     }
     expected = {k: mock_pair_record.get(k, None) for k, _ in fields_to_extract.items()}
     return PairRecord(**expected)
@@ -67,7 +67,7 @@ def test_map_pair_to_dataclass():
     [
         ("ethereum", mock_pair, []),
         ("solana", mock_pair, [get_exepected_pair_record()]),
-    ]
+    ],
 )
 def test_extract_pairs(chain, pairs, expected):
     assert extractor.extract_pairs(chain, pairs) == expected

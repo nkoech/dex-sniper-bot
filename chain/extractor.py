@@ -23,7 +23,9 @@ def get_nested_value(pair: dict, key: str) -> typing.Optional[typing.Union[str, 
     return value
 
 
-def get_pair_record(pair: typing.Dict[str, typing.Optional[typing.Union[str, float]]]) -> PairRecord:
+def get_pair_record(
+    pair: typing.Dict[str, typing.Optional[typing.Union[str, float]]]
+) -> PairRecord:
     pair_record = {
         field: get_nested_value(pair, key) for field, key in fields_to_extract.items()
     }
