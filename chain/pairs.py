@@ -11,7 +11,9 @@ from chain import (
 
 def create_data_frame(chain: str, pairs: typing.List[typing.Dict]) -> pd.DataFrame:
     extracted_pairs = extractor.extract_pairs(chain, pairs)
-    configs.logger.info(f"Extracted {len(extracted_pairs)} pairs out of {len(pairs)} downloaded pairs.")
+    configs.logger.info(
+        f"Extracted {len(extracted_pairs)} pairs out of {len(pairs)} downloaded pairs."
+    )
     return pd.DataFrame(extracted_pairs)
 
 
@@ -22,10 +24,14 @@ def get_pairs(chain: str, uri: str) -> pd.DataFrame:
     return pairs_df
 
 
-def get_chain_pairs(chain: str, pair_types: typing.List[str]) -> typing.Generator[typing.Tuple[str, pd.DataFrame], None, None]:
+def get_chain_pairs(
+    chain: str, pair_types: typing.List[str]
+) -> typing.Generator[typing.Tuple[str, pd.DataFrame], None, None]:
     base_url = configs.settings["base_url"]
     chain_settings = configs.settings[chain]
     for pair_type in pair_types:
         setting = chain_settings[pair_type]
-        uri = f"{base_url}/{setting['since']}/1?&{setting['filter']}&{setting['rank_by']}"
+        uri = (
+            f"{base_url}/{setting['since']}/1?&{setting['filter']}&{setting['rank_by']}"
+        )
         yield pair_type, get_pairs(chain, uri)
