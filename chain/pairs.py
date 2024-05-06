@@ -11,12 +11,12 @@ from chain import (
 
 def get_pairs(chain: str, uri: str) -> pd.DataFrame:
     pairs = downloader.retrieve_pairs(uri, configs.max_retries)
-    configs.logger.info(f"Downloaded {len(pairs)} pairs from {uri}")
+    count = len(pairs)
+    configs.logger.info(f"Downloaded {count} pairs from {uri}")
     extracted_pairs = extractor.extract_pairs(chain, pairs)
-    configs.logger.info(
-        f"Extracted {len(extracted_pairs)} pairs out of {len(pairs)} downloaded pairs."
-    )
-    return pd.DataFrame(extracted_pairs)
+    df = pd.DataFrame(extracted_pairs)
+    configs.logger.info(f"Extracted {len(df)} pairs from {count} pairs")
+    return df
 
 
 def get_chain_pairs(
