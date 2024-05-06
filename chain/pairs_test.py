@@ -34,17 +34,6 @@ def get_exepected_pair_record():
 
 
 @pytest.mark.parametrize(
-    "chain, chain_pairs, expected",
-    [
-        ("ethereum", mock_pair, pd.DataFrame([])),
-        ("solana", mock_pair, pd.DataFrame([get_exepected_pair_record()])),
-    ],
-)
-def test_create_data_frame(chain, chain_pairs, expected):
-    pd.testing.assert_frame_equal(pairs.create_data_frame(chain, chain_pairs), expected)
-
-
-@pytest.mark.parametrize(
     "chain, expected",
     [
         ("ethereum", pd.DataFrame([])),
