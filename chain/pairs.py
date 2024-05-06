@@ -9,7 +9,7 @@ from chain import (
 )
 
 
-def download_pairs(chain: str, uri: str) -> pd.DataFrame:
+def download_pairs(uri: str) -> pd.DataFrame:
     pairs = downloader.retrieve_pairs(uri, configs.max_retries)
     configs.logger.info(f"Downloaded {len(pairs)} pairs from {uri}")
     return pairs
@@ -30,5 +30,5 @@ def get_chain_pairs(
     for pair_type in pair_types:
         setting = chain_settings[pair_type]
         api_query = f"{setting['since']}/1?&{setting['filter']}&{setting['rank_by']}"
-        pairs = download_pairs(chain, f"{base_url}/{api_query}")
+        pairs = download_pairs(f"{base_url}/{api_query}")
         yield pair_type, extract_pairs(chain, pairs)
