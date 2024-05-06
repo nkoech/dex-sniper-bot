@@ -33,8 +33,9 @@ def receive_pairs_from_websocket(
 
 
 def retrieve_pairs(uri: str, max_tries: int) -> typing.List[dict]:
+    http_header = configs.settings["http_header"]
     for tries in range(max_tries):
-        with websocket_connection(uri, configs.http_header) as ws:
+        with websocket_connection(uri, http_header) as ws:
             pairs = receive_pairs_from_websocket(ws).get("pairs")
             if pairs:
                 return pairs
