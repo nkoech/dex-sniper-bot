@@ -29,7 +29,6 @@ def get_chain_pairs(
     chain_settings = configs.settings[chain]
     for pair_type in pair_types:
         setting = chain_settings[pair_type]
-        uri = (
-            f"{base_url}/{setting['since']}/1?&{setting['filter']}&{setting['rank_by']}"
-        )
-        yield pair_type, extract_pairs(chain, download_pairs(chain, uri))
+        api_query = f"{setting['since']}/1?&{setting['filter']}&{setting['rank_by']}"
+        pairs = download_pairs(chain, f"{base_url}/{api_query}")
+        yield pair_type, extract_pairs(chain, pairs)
