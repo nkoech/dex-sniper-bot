@@ -34,15 +34,14 @@ def get_exepected_pair_record():
 
 
 @pytest.mark.parametrize(
-    "chain, expected",
+    "chain, input_pairs, expected",
     [
-        ("ethereum", pd.DataFrame([])),
-        ("solana", pd.DataFrame([get_exepected_pair_record()])),
+        ("ethereum", [], pd.DataFrame([])),
+        ("solana", mock_pair, pd.DataFrame([get_exepected_pair_record()])),
     ],
 )
-def test_get_pairs(mocker, chain, expected):
-    mocker.patch("chain.pairs.downloader.retrieve_pairs", return_value=mock_pair)
-    pd.testing.assert_frame_equal(pairs.get_pairs(chain, "uri"), expected)
+def test_extract_pairs(chain, input_pairs, expected):
+    pd.testing.assert_frame_equal(pairs.extract_pairs(chain, input_pairs), expected)
 
 
 @pytest.mark.parametrize(

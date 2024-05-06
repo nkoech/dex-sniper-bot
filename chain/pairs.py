@@ -9,7 +9,7 @@ from chain import (
 )
 
 
-def download_pairs(uri: str) -> pd.DataFrame:
+def download_pairs(uri: str) -> typing.List[dict]:
     pairs = downloader.retrieve_pairs(uri, configs.max_retries)
     configs.logger.info(f"Downloaded {len(pairs)} pairs from {uri}")
     return pairs
