@@ -9,13 +9,16 @@ from chain import (
 )
 
 
-def get_pairs(chain: str, uri: str) -> pd.DataFrame:
+def download_pairs(chain: str, uri: str) -> pd.DataFrame:
     pairs = downloader.retrieve_pairs(uri, configs.max_retries)
-    count = len(pairs)
-    configs.logger.info(f"Downloaded {count} pairs from {uri}")
+    configs.logger.info(f"Downloaded {len(pairs)} pairs from {uri}")
+    return pairs
+
+
+def extract_pairs(chain: str, pairs: typing.List[dict]) -> pd.DataFrame:
     extracted_pairs = extractor.extract_pairs(chain, pairs)
     df = pd.DataFrame(extracted_pairs)
-    configs.logger.info(f"Extracted {len(df)} pairs from {count} pairs")
+    configs.logger.info(f"Extracted {len(df)} pairs from {len(pairs)} pairs")
     return df
 
 
@@ -29,4 +32,4 @@ def get_chain_pairs(
         uri = (
             f"{base_url}/{setting['since']}/1?&{setting['filter']}&{setting['rank_by']}"
         )
-        yield pair_type, get_pairs(chain, uri)
+        yield pair_type, extract_pairs(chain, download_pairs(chain, uri))
