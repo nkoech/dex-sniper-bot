@@ -31,6 +31,8 @@
         "base_token_name": "baseToken.name",
         "base_token_address": "baseToken.address",
         "base_token_api": "",
+        "base_token_dex": "",
+        "base_token_rugcheck": "",
         "quote_token_symbol": "quoteToken.symbol",
         "quote_token_name": "quoteToken.name",
         "quote_token_address": "quoteToken.address",
@@ -55,6 +57,6 @@
         "makers_5m": "makers.m5",
         "makers_1h": "makers.h1",
         "makers_6h": "makers.h6",
-        "makers_24h": "makers.h24"
+        "makers_24h": "makers.h24",
     }
 }
