@@ -10,7 +10,7 @@ PairRecord = namedtuple("PairRecord", fields_to_extract.keys())
 
 
 def has_socials(profile: dict) -> bool:
-    return bool(profile.get("website")) and bool(profile.get("twitter", False))
+    return bool(profile.get("website")) and bool(profile.get("twitter"))
 
 
 def get_nested_value(pair: dict, key: str) -> typing.Optional[typing.Union[str, float]]:
