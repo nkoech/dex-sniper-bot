@@ -38,7 +38,7 @@ def get_pair_record(
 def extract_pairs(chain: str, pairs: typing.List[dict]) -> typing.List[PairRecord]:
     chain_pairs = []
     for pair in pairs:
-        if pair["chainId"] != chain or not has_socials(pair.get("profile", {})):
+        if chain != pair["chainId"] or not has_socials(pair.get("profile", {})):
             continue
         chain_pairs.append(get_pair_record(pair))
     return chain_pairs
