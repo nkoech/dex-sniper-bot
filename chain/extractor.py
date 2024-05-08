@@ -4,7 +4,7 @@ from collections import namedtuple
 from chain import configs
 
 
-base_token_api_url = configs.settings["tokens_api_url"]
+base_token_api_url = configs.settings["url"]["tokens_api"]
 fields_to_extract = configs.settings["fields_to_extract"]
 PairRecord = namedtuple("PairRecord", fields_to_extract.keys())
 

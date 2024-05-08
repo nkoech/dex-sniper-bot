@@ -1,10 +1,4 @@
 {
-    "http_header": {
-        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36",
-        "Origin": "https://dexscreener.com"
-    },
-    "base_url": "wss://io.dexscreener.com/dex/screener/pairs",
-    "tokens_api_url": "https://api.dexscreener.com/latest/dex/tokens",
     "solana": {
         "new_pairs": {
             "since": "h6",
@@ -21,6 +15,14 @@
             "filter": "",
             "rank_by": "rankBy[key]=trendingScoreH6&rankBy[order]=desc"
         }
+    },
+    "http_header": {
+        "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/113.0.0.0 Safari/537.36",
+        "Origin": "https://dexscreener.com"
+    },
+    "url": {
+        "base": "wss://io.dexscreener.com/dex/screener/pairs",
+        "tokens_api": "https://api.dexscreener.com/latest/dex/tokens",
     },
     "reports_dir": "./reports",
     "fields_to_extract": {
