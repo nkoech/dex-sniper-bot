@@ -25,7 +25,7 @@ def extract_pairs(chain: str, pairs: typing.List[dict]) -> pd.DataFrame:
 def get_chain_pairs(
     chain: str, pair_types: typing.List[str]
 ) -> typing.Generator[typing.Tuple[str, pd.DataFrame], None, None]:
-    base_url = configs.settings["url"]["base"]
+    base_url = configs.settings["url"]["pairs_dex"]
     chain_settings = configs.settings[chain]
     for pair_type in pair_types:
         setting = chain_settings[pair_type]

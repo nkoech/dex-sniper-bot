@@ -21,8 +21,9 @@
         "Origin": "https://dexscreener.com"
     },
     "url": {
-        "base": "wss://io.dexscreener.com/dex/screener/pairs",
-        "tokens_api": "https://api.dexscreener.com/latest/dex/tokens",
+        "pairs_dex": "wss://io.dexscreener.com/dex/screener/pairs",
+        "token_dex": "https://dexscreener.com/",
+        "tokens_api": "https://api.dexscreener.com/latest/dex/tokens"
     },
     "reports_dir": "./reports",
     "fields_to_extract": {
