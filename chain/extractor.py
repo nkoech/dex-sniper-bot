@@ -10,10 +10,6 @@ fields_to_extract = configs.settings["fields_to_extract"]
 PairRecord = namedtuple("PairRecord", fields_to_extract.keys())
 
 
-def has_socials(profile: dict) -> bool:
-    return bool(profile.get("website")) and bool(profile.get("twitter"))
-
-
 def get_nested_value(pair: dict, key: str) -> typing.Optional[typing.Union[str, float]]:
     key_parts = key.split(".")
     value = pair
@@ -42,7 +38,7 @@ def get_pair_record(
 def extract_pairs(chain: str, pairs: typing.List[dict]) -> typing.List[PairRecord]:
     chain_pairs = []
     for pair in pairs:
-        if chain != pair["chainId"] or not has_socials(pair.get("profile", {})):
+        if chain != pair["chainId"]:
             continue
         chain_pairs.append(get_pair_record(pair))
     return chain_pairs

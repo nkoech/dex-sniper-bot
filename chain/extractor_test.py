@@ -27,17 +27,6 @@ mock_pair = [
 
 
 @pytest.mark.parametrize(
-    "profile, expected",
-    [
-        (mock_pair[0]["profile"], False),
-        (mock_pair[1]["profile"], True),
-    ],
-)
-def test_has_socials(profile, expected):
-    assert extractor.has_socials(profile) is expected
-
-
-@pytest.mark.parametrize(
     "pair, key, expected",
     [
         ({"key": "value"}, "''", None),

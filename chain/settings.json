@@ -60,6 +60,8 @@
         "makers_5m": "makers.m5",
         "makers_1h": "makers.h1",
         "makers_6h": "makers.h6",
-        "makers_24h": "makers.h24"
+        "makers_24h": "makers.h24",
+        "website": "profile.twitter",
+        "twitter": "profile.twitter"
     }
 }
