@@ -37,25 +37,26 @@ def test_get_nested_value(pair, key, expected):
     assert extractor.get_nested_value(pair, key) == expected
 
 
-def get_exepected_pair_record():
-    mock_pair_record = {
+def get_expected_pair_record():
+    base_record = {
         "chain": "solana",
         "base_token_address": mock_token_address,
         "base_token_api": f"https://api.dexscreener.com/latest/dex/tokens/{mock_token_address}",
+        "website": "https://example.com",
     }
-    expected = {k: mock_pair_record.get(k, None) for k, _ in fields_to_extract.items()}
-    return PairRecord(**expected)
+    mock_pair_records = [base_record, {**base_record, "twitter": "example"}]
+    return [PairRecord(**{k: record.get(k, None) for k in fields_to_extract}) for record in mock_pair_records]
 
 
 def test_map_pair_to_dataclass():
-    assert extractor.get_pair_record(mock_pair[0]) == get_exepected_pair_record()
+    assert extractor.get_pair_record(mock_pair[0]) == get_expected_pair_record()[0]
 
 
 @pytest.mark.parametrize(
     "chain, pairs, expected",
     [
         ("ethereum", mock_pair, []),
-        ("solana", mock_pair, [get_exepected_pair_record()]),
+        ("solana", mock_pair, get_expected_pair_record()),
     ],
 )
 def test_extract_pairs(chain, pairs, expected):

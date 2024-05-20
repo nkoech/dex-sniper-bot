@@ -29,9 +29,9 @@ def get_pair_record(
     pair_record["base_token_api"] = (
         f"{base_token_api_url}/{pair_record['base_token_address']}"
     )
-    pair_record["base_token_dex"] = (
-        f"{base_token_dex_url}/{pair_record['chain']}/{pair_record['pair_address']}"
-    )
+    # pair_record["base_token_dex"] = (
+    #     f"{base_token_dex_url}/{pair_record['chain']}/{pair_record['pair_address']}"
+    # )
     return PairRecord(**pair_record)
 
 
